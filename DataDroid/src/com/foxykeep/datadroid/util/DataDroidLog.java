@@ -8,9 +8,8 @@
 
 package com.foxykeep.datadroid.util;
 
-import com.foxykeep.datadroid.BuildConfig;
-
 import android.util.Log;
+import com.foxykeep.datadroid.BuildConfig;
 
 /**
  * Centralized helper for logging information for DataDroid.

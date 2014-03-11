@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.foxykeep</groupId>
+    <artifactId>datadroid</artifactId>
+    <version>2.1.2</version>
+    <packaging>apklib</packaging>
+    <name>DataDroid</name>
+
+    <properties>
+        <android-sdk-version>19</android-sdk-version>
+
+        <!-- dependency versions -->
+        <android.version>4.4_r1</android.version>
+
+        <!-- plugin versions -->
+        <android-maven-plugin.version>3.8.0</android-maven-plugin.version>
+
+    </properties>
+
+    <dependencies>
+
+        <!-- provided dependencies -->
+        <dependency>
+            <groupId>android</groupId>
+            <artifactId>android</artifactId>
+            <version>${android.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <finalName>${project.artifactId}</finalName>
+
+        <plugins>
+
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <version>${android-maven-plugin.version}</version>
+                <configuration>
+                    <sdk>
+                        <platform>${android-sdk-version}</platform>
+                    </sdk>
+                    <manifest>
+                        <debuggable>true</debuggable>
+                    </manifest>
+                </configuration>
+                <extensions>true</extensions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals><goal>add-source</goal></goals>
+                        <configuration>
+                            <sources>
+                                <source>res</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>
