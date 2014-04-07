@@ -14,7 +14,7 @@
         <android-sdk-version>19</android-sdk-version>
 
         <!-- dependency versions -->
-        <android.version>4.4_r1</android.version>
+        <android.version>4.4.2_r3</android.version>
 
         <!-- plugin versions -->
         <android-maven-plugin.version>3.8.0</android-maven-plugin.version>
